@@ -1,102 +1,100 @@
 ---
 title: OBN — OpenClaw Builder Network
-description: Vetted patterns for running OpenClaw agents in production.
+description: The open-source community for running OpenClaw agents in production. Patterns, infrastructure, and tooling — built by operators, for operators.
 template: splash
 hero:
-  tagline: The missing manual for production OpenClaw agents. 33 tested patterns across security, memory, operations, and more — with copy-paste configs, documented failure modes, and reproducible test harnesses.
+  tagline: "The open-source community for running OpenClaw agents in production. 36 tested patterns, one-click cloud deploy, and an AI skill that keeps your agent updated — all community-contributed under Apache 2.0."
   actions:
-    - text: Get Started
-      link: /getting-started/
+    - text: What do you need?
+      link: "#what-are-you-trying-to-do"
       icon: right-arrow
       variant: primary
-    - text: Browse Patterns
-      link: /patterns/security/prompt-injection-defense/
-      icon: open-book
+    - text: Install the Skill
+      link: /skill/
+      icon: puzzle
     - text: GitHub
-      link: https://github.com/obn-wiki/obn-wiki
+      link: https://github.com/obn-wiki
       icon: github
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Pattern Categories
+## What are you trying to do?
 
 <CardGrid>
-  <Card title="Security (7)" icon="warning">
-    Prompt injection defense, secret management, tool policy lockdown, gateway hardening, system guardrails, skill vetting, two-agent architecture.
+  <Card title="🔒 Secure my agent" icon="warning">
+    Lock down your gateway, defend against prompt injection, manage secrets, vet skills.
 
-    [Browse Security &rarr;](/patterns/security/prompt-injection-defense/)
+    **Start here:** [Security Quick Path](/getting-started/#secure-my-agent)
+
+    9 patterns — from network hardening to SSRF defense.
   </Card>
-  <Card title="Operations (5)" icon="setting">
-    Heartbeat design, overnight execution, cost optimization, health monitoring, cheap model coordination.
+  <Card title="🚀 Deploy to cloud" icon="rocket">
+    Get an OpenClaw node running on AWS or GCP with Tailscale, hardened OS, zero public inbound.
 
-    [Browse Operations &rarr;](/patterns/operations/heartbeat-checklist-design/)
+    **Start here:** [Deploy Quick Path](/getting-started/#deploy-to-cloud)
+
+    OpenTofu modules — `tofu apply` and done.
   </Card>
-  <Card title="Memory (5)" icon="document">
-    Pre-compaction flush, secret-free hygiene, log rotation, search tuning, multi-agent isolation.
+  <Card title="🔧 Fix a problem" icon="setting">
+    Agent losing context? Cron jobs skipping? Hooks breaking after upgrade?
 
-    [Browse Memory &rarr;](/patterns/memory/pre-compaction-memory-flush/)
+    **Start here:** [Search patterns](/patterns/security/prompt-injection-defense/) or use the 💬 chat
+
+    36 patterns with documented failure modes.
   </Card>
-  <Card title="Soul (4)" icon="star">
-    Production boundaries, drift prevention, multi-channel tone, graceful uncertainty.
+  <Card title="💰 Reduce costs" icon="list-format">
+    Haiku as coordinator (70-80% savings), session history caps, token budgeting.
 
-    [Browse Soul &rarr;](/patterns/soul/production-boundary-hardening/)
+    **Start here:** [Cost Quick Path](/getting-started/#reduce-costs)
+
+    Tested strategies ranked by ROI.
   </Card>
-  <Card title="Context (3)" icon="list-format">
-    Window budgeting, workspace injection control, compaction strategy for 24/7 agents.
+  <Card title="🔄 Run 24/7 reliably" icon="laptop">
+    Heartbeats, cron hardening, overnight execution, health monitoring.
 
-    [Browse Context &rarr;](/patterns/context/window-budget-management/)
+    **Start here:** [Reliability Quick Path](/getting-started/#run-247-reliably)
+
+    Battle-tested configs for always-on agents.
   </Card>
-  <Card title="Gateway (3)" icon="rocket">
-    Production deployment, multi-channel routing, remote access via Tailscale.
+  <Card title="🤖 Keep it updated" icon="star">
+    Install the OBN skill — your agent checks for pattern updates, audits skills, and proposes learnings.
 
-    [Browse Gateway &rarr;](/patterns/gateway/production-gateway-deployment/)
-  </Card>
-  <Card title="Tools (3)" icon="puzzle">
-    TOOLS.md organization, rate limiting, dangerous command prevention.
+    **Start here:** [Install @obn/advisor](/skill/)
 
-    [Browse Tools &rarr;](/patterns/tools/tools-md-organization/)
-  </Card>
-  <Card title="Agents (3)" icon="laptop">
-    Startup sequence, workspace isolation, graceful degradation on missing files.
-
-    [Browse Agents &rarr;](/patterns/agents/startup-sequence-optimization/)
+    The community learns from every operator.
   </Card>
 </CardGrid>
 
-## Start Here
+## Open Source, Community-Driven
 
-New to production OpenClaw? Pick your pain point:
+OBN is built by operators who run OpenClaw in production. Every pattern, every config, every test harness is contributed by the community and reviewed by peers.
 
 <CardGrid>
-  <Card title="I need security NOW" icon="warning">
-    1. [Gateway Hardening](/patterns/security/gateway-hardening/) — lock down the network
-    2. [Tool Policy Lockdown](/patterns/security/tool-policy-lockdown/) — least-privilege access
-    3. [Prompt Injection Defense](/patterns/security/prompt-injection-defense/) — authority model
-    4. [Native Guardrails](/patterns/security/native-guardrails-integration/) — layer with system defenses
+  <Card title="Contribute a Pattern" icon="open-book">
+    Found a failure mode? Built a config that works? Share it.
+
+    Fork → write markdown → PR. You never touch site code.
+
+    [Contributing Guide](/contributing/)
   </Card>
-  <Card title="My agent loses context" icon="document">
-    1. [Pre-Compaction Flush](/patterns/memory/pre-compaction-memory-flush/) — save state before compaction
-    2. [Compaction Strategy](/patterns/context/compaction-strategy-for-24-7-agents/) — optimize when and how
-    3. [Window Budget](/patterns/context/window-budget-management/) — allocate tokens wisely
-  </Card>
-  <Card title="This costs too much" icon="setting">
-    1. [Cheap Model Coordinator](/patterns/operations/cheap-model-coordinator/) — biggest savings (70-80%)
-    2. [Cost Optimization](/patterns/operations/cost-optimization-strategies/) — 7 strategies ranked
-    3. [Heartbeat Design](/patterns/operations/heartbeat-checklist-design/) — stop wasting on checks
+  <Card title="The Learning Loop" icon="document">
+    Agents running the `@obn/advisor` skill observe how patterns perform in production and propose improvements back to OBN.
+
+    More operators → more observations → better patterns → repeat.
+
+    [How the Skill Works](/skill/)
   </Card>
 </CardGrid>
 
-## How It Works
+## The OBN Ecosystem
 
-Every pattern follows the same structure:
+| Project | What It Is | Repo |
+|---------|-----------|------|
+| **Patterns** | 36 vetted operational patterns across 8 categories | [obn-wiki/patterns](https://github.com/obn-wiki/patterns) |
+| **Claw-Form** | OpenTofu IaC for deploying OpenClaw nodes (AWS + GCP) | [obn-wiki/claw-form](https://github.com/obn-wiki/claw-form) |
+| **@obn/advisor** | OpenClaw skill — auto-updates, skill auditing, community learnings | [obn-wiki/advisor](https://github.com/obn-wiki/advisor) |
+| **obn.wiki** | This site — docs, search, AI chat sidebar | Built from patterns repo |
 
-1. **Problem** — what this solves (have you experienced this?)
-2. **Context** — when to use / when NOT to use
-3. **Implementation** — copy-paste `SOUL.md`, `openclaw.json`, `HEARTBEAT.md` configs
-4. **Failure Modes** — what can still go wrong + mitigations
-5. **Test Harness** — bash script to validate your setup
-6. **Evidence** — real metrics from production use
-
-Patterns are tested against **OpenClaw v2026.2+**. Check the [Version Matrix](/reference/version-matrix/) for compatibility.
+All projects are **Apache 2.0** licensed. [Version Matrix](/reference/version-matrix/) maps patterns to OpenClaw releases.
