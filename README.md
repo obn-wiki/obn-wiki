@@ -136,7 +136,7 @@ Patterns without test harnesses are marked `[UNTESTED]` and cannot be promoted t
 
 ## License
 
-MIT
+Apache License 2.0 — see [LICENSE](LICENSE).
 
 ## Contributing
 
